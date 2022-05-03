@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`abci 1`] = `
+Object {
+  "MaxBlockBytes": "0",
+  "MaxDataBytes": "0",
+  "MaxGas": "0",
+  "MaxTxBytes": "0",
+  "TimeIotaMS": "000",
+}
+`;
+
+exports[`tm 1`] = `
+Object {
+  "Ops": Array [
+    Object {
+      "Type": "",
+    },
+  ],
+}
+`;
