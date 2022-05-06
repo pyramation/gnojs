@@ -1,3 +1,3 @@
-import * as _7 from "../github.com/gnolang/gno/pkgs/bft/abci/types/abci";
-export const abci = { ..._7
+import * as _18 from "../github.com/gnolang/gno/pkgs/bft/abci/types/abci";
+export const abci = { ..._18
 };

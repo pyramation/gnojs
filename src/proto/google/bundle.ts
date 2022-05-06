@@ -1,7 +1,9 @@
-import * as _12 from "./protobuf/any";
-import * as _13 from "./protobuf/timestamp";
+import * as _33 from "./protobuf/any";
+import * as _34 from "./protobuf/duration";
+import * as _35 from "./protobuf/timestamp";
 export namespace google {
-  export const protobuf = { ..._12,
-    ..._13
+  export const protobuf = { ..._33,
+    ..._34,
+    ..._35
   };
 }

@@ -1,52 +1,52 @@
-import * as _7 from "../github.com/gnolang/gno/pkgs/bft/abci/types/abci";
+import * as _18 from "../github.com/gnolang/gno/pkgs/bft/abci/types/abci";
 export declare const abci: {
     RequestBase: {
-        encode(_: _7.RequestBase, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestBase;
-        fromJSON(_: any): _7.RequestBase;
-        toJSON(_: _7.RequestBase): unknown;
-        fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): _7.RequestBase;
+        encode(_: _18.RequestBase, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestBase;
+        fromJSON(_: any): _18.RequestBase;
+        toJSON(_: _18.RequestBase): unknown;
+        fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): _18.RequestBase;
     };
     RequestEcho: {
-        encode(message: _7.RequestEcho, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestEcho;
-        fromJSON(object: any): _7.RequestEcho;
-        toJSON(message: _7.RequestEcho): unknown;
+        encode(message: _18.RequestEcho, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestEcho;
+        fromJSON(object: any): _18.RequestEcho;
+        toJSON(message: _18.RequestEcho): unknown;
         fromPartial<I_1 extends {
             RequestBase?: {};
             Message?: string;
         } & {
             RequestBase?: {} & {} & Record<Exclude<keyof I_1["RequestBase"], never>, never>;
             Message?: string;
-        } & Record<Exclude<keyof I_1, keyof _7.RequestEcho>, never>>(object: I_1): _7.RequestEcho;
+        } & Record<Exclude<keyof I_1, keyof _18.RequestEcho>, never>>(object: I_1): _18.RequestEcho;
     };
     RequestFlush: {
-        encode(message: _7.RequestFlush, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestFlush;
-        fromJSON(object: any): _7.RequestFlush;
-        toJSON(message: _7.RequestFlush): unknown;
+        encode(message: _18.RequestFlush, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestFlush;
+        fromJSON(object: any): _18.RequestFlush;
+        toJSON(message: _18.RequestFlush): unknown;
         fromPartial<I_2 extends {
             RequestBase?: {};
         } & {
             RequestBase?: {} & {} & Record<Exclude<keyof I_2["RequestBase"], never>, never>;
-        } & Record<Exclude<keyof I_2, "RequestBase">, never>>(object: I_2): _7.RequestFlush;
+        } & Record<Exclude<keyof I_2, "RequestBase">, never>>(object: I_2): _18.RequestFlush;
     };
     RequestInfo: {
-        encode(message: _7.RequestInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestInfo;
-        fromJSON(object: any): _7.RequestInfo;
-        toJSON(message: _7.RequestInfo): unknown;
+        encode(message: _18.RequestInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestInfo;
+        fromJSON(object: any): _18.RequestInfo;
+        toJSON(message: _18.RequestInfo): unknown;
         fromPartial<I_3 extends {
             RequestBase?: {};
         } & {
             RequestBase?: {} & {} & Record<Exclude<keyof I_3["RequestBase"], never>, never>;
-        } & Record<Exclude<keyof I_3, "RequestBase">, never>>(object: I_3): _7.RequestInfo;
+        } & Record<Exclude<keyof I_3, "RequestBase">, never>>(object: I_3): _18.RequestInfo;
     };
     RequestSetOption: {
-        encode(message: _7.RequestSetOption, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestSetOption;
-        fromJSON(object: any): _7.RequestSetOption;
-        toJSON(message: _7.RequestSetOption): unknown;
+        encode(message: _18.RequestSetOption, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestSetOption;
+        fromJSON(object: any): _18.RequestSetOption;
+        toJSON(message: _18.RequestSetOption): unknown;
         fromPartial<I_4 extends {
             RequestBase?: {};
             Key?: string;
@@ -55,13 +55,13 @@ export declare const abci: {
             RequestBase?: {} & {} & Record<Exclude<keyof I_4["RequestBase"], never>, never>;
             Key?: string;
             Value?: string;
-        } & Record<Exclude<keyof I_4, keyof _7.RequestSetOption>, never>>(object: I_4): _7.RequestSetOption;
+        } & Record<Exclude<keyof I_4, keyof _18.RequestSetOption>, never>>(object: I_4): _18.RequestSetOption;
     };
     RequestInitChain: {
-        encode(message: _7.RequestInitChain, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestInitChain;
-        fromJSON(object: any): _7.RequestInitChain;
-        toJSON(message: _7.RequestInitChain): unknown;
+        encode(message: _18.RequestInitChain, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestInitChain;
+        fromJSON(object: any): _18.RequestInitChain;
+        toJSON(message: _18.RequestInitChain): unknown;
         fromPartial<I_5 extends {
             RequestBase?: {};
             Time?: Date;
@@ -473,13 +473,13 @@ export declare const abci: {
                         toUnsigned: () => import("long");
                         xor: (other: string | number | import("long")) => import("long");
                     } & Record<Exclude<keyof I_5["ConsensusParams"]["Block"]["TimeIotaMS"], keyof import("long")>, never>);
-                } & Record<Exclude<keyof I_5["ConsensusParams"]["Block"], keyof _7.BlockParams>, never>;
+                } & Record<Exclude<keyof I_5["ConsensusParams"]["Block"], keyof _18.BlockParams>, never>;
                 Validator?: {
                     PubKeyTypeURLs?: string[];
                 } & {
                     PubKeyTypeURLs?: string[] & string[] & Record<Exclude<keyof I_5["ConsensusParams"]["Validator"]["PubKeyTypeURLs"], keyof string[]>, never>;
                 } & Record<Exclude<keyof I_5["ConsensusParams"]["Validator"], "PubKeyTypeURLs">, never>;
-            } & Record<Exclude<keyof I_5["ConsensusParams"], keyof _7.ConsensusParams>, never>;
+            } & Record<Exclude<keyof I_5["ConsensusParams"], keyof _18.ConsensusParams>, never>;
             Validators?: {
                 Address?: string;
                 PubKey?: {
@@ -575,7 +575,7 @@ export declare const abci: {
                     toUnsigned: () => import("long");
                     xor: (other: string | number | import("long")) => import("long");
                 } & Record<Exclude<keyof I_5["Validators"][number]["Power"], keyof import("long")>, never>);
-            } & Record<Exclude<keyof I_5["Validators"][number], keyof _7.ValidatorUpdate>, never>)[] & Record<Exclude<keyof I_5["Validators"], keyof {
+            } & Record<Exclude<keyof I_5["Validators"][number], keyof _18.ValidatorUpdate>, never>)[] & Record<Exclude<keyof I_5["Validators"], keyof {
                 Address?: string;
                 PubKey?: {
                     typeUrl?: string;
@@ -590,13 +590,13 @@ export declare const abci: {
                 typeUrl?: string;
                 value?: Uint8Array;
             } & Record<Exclude<keyof I_5["AppState"], keyof import("../google/protobuf/any").Any>, never>;
-        } & Record<Exclude<keyof I_5, keyof _7.RequestInitChain>, never>>(object: I_5): _7.RequestInitChain;
+        } & Record<Exclude<keyof I_5, keyof _18.RequestInitChain>, never>>(object: I_5): _18.RequestInitChain;
     };
     RequestQuery: {
-        encode(message: _7.RequestQuery, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestQuery;
-        fromJSON(object: any): _7.RequestQuery;
-        toJSON(message: _7.RequestQuery): unknown;
+        encode(message: _18.RequestQuery, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestQuery;
+        fromJSON(object: any): _18.RequestQuery;
+        toJSON(message: _18.RequestQuery): unknown;
         fromPartial<I_6 extends {
             RequestBase?: {};
             Data?: Uint8Array;
@@ -680,13 +680,13 @@ export declare const abci: {
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_6["Height"], keyof import("long")>, never>);
             Prove?: boolean;
-        } & Record<Exclude<keyof I_6, keyof _7.RequestQuery>, never>>(object: I_6): _7.RequestQuery;
+        } & Record<Exclude<keyof I_6, keyof _18.RequestQuery>, never>>(object: I_6): _18.RequestQuery;
     };
     RequestBeginBlock: {
-        encode(message: _7.RequestBeginBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestBeginBlock;
-        fromJSON(object: any): _7.RequestBeginBlock;
-        toJSON(message: _7.RequestBeginBlock): unknown;
+        encode(message: _18.RequestBeginBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestBeginBlock;
+        fromJSON(object: any): _18.RequestBeginBlock;
+        toJSON(message: _18.RequestBeginBlock): unknown;
         fromPartial<I_7 extends {
             RequestBase?: {};
             Hash?: Uint8Array;
@@ -804,19 +804,19 @@ export declare const abci: {
                         xor: (other: string | number | import("long")) => import("long");
                     } & Record<Exclude<keyof I_7["LastCommitInfo"]["Votes"][number]["Power"], keyof import("long")>, never>);
                     SignedLastBlock?: boolean;
-                } & Record<Exclude<keyof I_7["LastCommitInfo"]["Votes"][number], keyof _7.VoteInfo>, never>)[] & Record<Exclude<keyof I_7["LastCommitInfo"]["Votes"], keyof {
+                } & Record<Exclude<keyof I_7["LastCommitInfo"]["Votes"][number], keyof _18.VoteInfo>, never>)[] & Record<Exclude<keyof I_7["LastCommitInfo"]["Votes"], keyof {
                     Address?: string;
                     Power?: string | number | import("long");
                     SignedLastBlock?: boolean;
                 }[]>, never>;
-            } & Record<Exclude<keyof I_7["LastCommitInfo"], keyof _7.LastCommitInfo>, never>;
-        } & Record<Exclude<keyof I_7, keyof _7.RequestBeginBlock>, never>>(object: I_7): _7.RequestBeginBlock;
+            } & Record<Exclude<keyof I_7["LastCommitInfo"], keyof _18.LastCommitInfo>, never>;
+        } & Record<Exclude<keyof I_7, keyof _18.RequestBeginBlock>, never>>(object: I_7): _18.RequestBeginBlock;
     };
     RequestCheckTx: {
-        encode(message: _7.RequestCheckTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestCheckTx;
-        fromJSON(object: any): _7.RequestCheckTx;
-        toJSON(message: _7.RequestCheckTx): unknown;
+        encode(message: _18.RequestCheckTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestCheckTx;
+        fromJSON(object: any): _18.RequestCheckTx;
+        toJSON(message: _18.RequestCheckTx): unknown;
         fromPartial<I_8 extends {
             RequestBase?: {};
             Tx?: Uint8Array;
@@ -896,26 +896,26 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_8["Type"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_8, keyof _7.RequestCheckTx>, never>>(object: I_8): _7.RequestCheckTx;
+        } & Record<Exclude<keyof I_8, keyof _18.RequestCheckTx>, never>>(object: I_8): _18.RequestCheckTx;
     };
     RequestDeliverTx: {
-        encode(message: _7.RequestDeliverTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestDeliverTx;
-        fromJSON(object: any): _7.RequestDeliverTx;
-        toJSON(message: _7.RequestDeliverTx): unknown;
+        encode(message: _18.RequestDeliverTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestDeliverTx;
+        fromJSON(object: any): _18.RequestDeliverTx;
+        toJSON(message: _18.RequestDeliverTx): unknown;
         fromPartial<I_9 extends {
             RequestBase?: {};
             Tx?: Uint8Array;
         } & {
             RequestBase?: {} & {} & Record<Exclude<keyof I_9["RequestBase"], never>, never>;
             Tx?: Uint8Array;
-        } & Record<Exclude<keyof I_9, keyof _7.RequestDeliverTx>, never>>(object: I_9): _7.RequestDeliverTx;
+        } & Record<Exclude<keyof I_9, keyof _18.RequestDeliverTx>, never>>(object: I_9): _18.RequestDeliverTx;
     };
     RequestEndBlock: {
-        encode(message: _7.RequestEndBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestEndBlock;
-        fromJSON(object: any): _7.RequestEndBlock;
-        toJSON(message: _7.RequestEndBlock): unknown;
+        encode(message: _18.RequestEndBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestEndBlock;
+        fromJSON(object: any): _18.RequestEndBlock;
+        toJSON(message: _18.RequestEndBlock): unknown;
         fromPartial<I_10 extends {
             RequestBase?: {};
             Height?: string | number | import("long");
@@ -993,24 +993,24 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_10["Height"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_10, keyof _7.RequestEndBlock>, never>>(object: I_10): _7.RequestEndBlock;
+        } & Record<Exclude<keyof I_10, keyof _18.RequestEndBlock>, never>>(object: I_10): _18.RequestEndBlock;
     };
     RequestCommit: {
-        encode(message: _7.RequestCommit, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.RequestCommit;
-        fromJSON(object: any): _7.RequestCommit;
-        toJSON(message: _7.RequestCommit): unknown;
+        encode(message: _18.RequestCommit, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.RequestCommit;
+        fromJSON(object: any): _18.RequestCommit;
+        toJSON(message: _18.RequestCommit): unknown;
         fromPartial<I_11 extends {
             RequestBase?: {};
         } & {
             RequestBase?: {} & {} & Record<Exclude<keyof I_11["RequestBase"], never>, never>;
-        } & Record<Exclude<keyof I_11, "RequestBase">, never>>(object: I_11): _7.RequestCommit;
+        } & Record<Exclude<keyof I_11, "RequestBase">, never>>(object: I_11): _18.RequestCommit;
     };
     ResponseBase: {
-        encode(message: _7.ResponseBase, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseBase;
-        fromJSON(object: any): _7.ResponseBase;
-        toJSON(message: _7.ResponseBase): unknown;
+        encode(message: _18.ResponseBase, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseBase;
+        fromJSON(object: any): _18.ResponseBase;
+        toJSON(message: _18.ResponseBase): unknown;
         fromPartial<I_12 extends {
             Error?: {
                 typeUrl?: string;
@@ -1047,13 +1047,13 @@ export declare const abci: {
             }[]>, never>;
             Log?: string;
             Info?: string;
-        } & Record<Exclude<keyof I_12, keyof _7.ResponseBase>, never>>(object: I_12): _7.ResponseBase;
+        } & Record<Exclude<keyof I_12, keyof _18.ResponseBase>, never>>(object: I_12): _18.ResponseBase;
     };
     ResponseException: {
-        encode(message: _7.ResponseException, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseException;
-        fromJSON(object: any): _7.ResponseException;
-        toJSON(message: _7.ResponseException): unknown;
+        encode(message: _18.ResponseException, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseException;
+        fromJSON(object: any): _18.ResponseException;
+        toJSON(message: _18.ResponseException): unknown;
         fromPartial<I_13 extends {
             ResponseBase?: {
                 Error?: {
@@ -1105,14 +1105,14 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_13["ResponseBase"], keyof _7.ResponseBase>, never>;
-        } & Record<Exclude<keyof I_13, "ResponseBase">, never>>(object: I_13): _7.ResponseException;
+            } & Record<Exclude<keyof I_13["ResponseBase"], keyof _18.ResponseBase>, never>;
+        } & Record<Exclude<keyof I_13, "ResponseBase">, never>>(object: I_13): _18.ResponseException;
     };
     ResponseEcho: {
-        encode(message: _7.ResponseEcho, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseEcho;
-        fromJSON(object: any): _7.ResponseEcho;
-        toJSON(message: _7.ResponseEcho): unknown;
+        encode(message: _18.ResponseEcho, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseEcho;
+        fromJSON(object: any): _18.ResponseEcho;
+        toJSON(message: _18.ResponseEcho): unknown;
         fromPartial<I_14 extends {
             ResponseBase?: {
                 Error?: {
@@ -1165,15 +1165,15 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_14["ResponseBase"], keyof _7.ResponseBase>, never>;
+            } & Record<Exclude<keyof I_14["ResponseBase"], keyof _18.ResponseBase>, never>;
             Message?: string;
-        } & Record<Exclude<keyof I_14, keyof _7.ResponseEcho>, never>>(object: I_14): _7.ResponseEcho;
+        } & Record<Exclude<keyof I_14, keyof _18.ResponseEcho>, never>>(object: I_14): _18.ResponseEcho;
     };
     ResponseFlush: {
-        encode(message: _7.ResponseFlush, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseFlush;
-        fromJSON(object: any): _7.ResponseFlush;
-        toJSON(message: _7.ResponseFlush): unknown;
+        encode(message: _18.ResponseFlush, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseFlush;
+        fromJSON(object: any): _18.ResponseFlush;
+        toJSON(message: _18.ResponseFlush): unknown;
         fromPartial<I_15 extends {
             ResponseBase?: {
                 Error?: {
@@ -1225,14 +1225,14 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_15["ResponseBase"], keyof _7.ResponseBase>, never>;
-        } & Record<Exclude<keyof I_15, "ResponseBase">, never>>(object: I_15): _7.ResponseFlush;
+            } & Record<Exclude<keyof I_15["ResponseBase"], keyof _18.ResponseBase>, never>;
+        } & Record<Exclude<keyof I_15, "ResponseBase">, never>>(object: I_15): _18.ResponseFlush;
     };
     ResponseInfo: {
-        encode(message: _7.ResponseInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseInfo;
-        fromJSON(object: any): _7.ResponseInfo;
-        toJSON(message: _7.ResponseInfo): unknown;
+        encode(message: _18.ResponseInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseInfo;
+        fromJSON(object: any): _18.ResponseInfo;
+        toJSON(message: _18.ResponseInfo): unknown;
         fromPartial<I_16 extends {
             ResponseBase?: {
                 Error?: {
@@ -1288,7 +1288,7 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_16["ResponseBase"], keyof _7.ResponseBase>, never>;
+            } & Record<Exclude<keyof I_16["ResponseBase"], keyof _18.ResponseBase>, never>;
             ABCIVersion?: string;
             AppVersion?: string;
             LastBlockHeight?: string | number | (import("long") & {
@@ -1364,13 +1364,13 @@ export declare const abci: {
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_16["LastBlockHeight"], keyof import("long")>, never>);
             LastBlockAppHash?: Uint8Array;
-        } & Record<Exclude<keyof I_16, keyof _7.ResponseInfo>, never>>(object: I_16): _7.ResponseInfo;
+        } & Record<Exclude<keyof I_16, keyof _18.ResponseInfo>, never>>(object: I_16): _18.ResponseInfo;
     };
     ResponseSetOption: {
-        encode(message: _7.ResponseSetOption, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseSetOption;
-        fromJSON(object: any): _7.ResponseSetOption;
-        toJSON(message: _7.ResponseSetOption): unknown;
+        encode(message: _18.ResponseSetOption, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseSetOption;
+        fromJSON(object: any): _18.ResponseSetOption;
+        toJSON(message: _18.ResponseSetOption): unknown;
         fromPartial<I_17 extends {
             ResponseBase?: {
                 Error?: {
@@ -1422,14 +1422,14 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_17["ResponseBase"], keyof _7.ResponseBase>, never>;
-        } & Record<Exclude<keyof I_17, "ResponseBase">, never>>(object: I_17): _7.ResponseSetOption;
+            } & Record<Exclude<keyof I_17["ResponseBase"], keyof _18.ResponseBase>, never>;
+        } & Record<Exclude<keyof I_17, "ResponseBase">, never>>(object: I_17): _18.ResponseSetOption;
     };
     ResponseInitChain: {
-        encode(message: _7.ResponseInitChain, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseInitChain;
-        fromJSON(object: any): _7.ResponseInitChain;
-        toJSON(message: _7.ResponseInitChain): unknown;
+        encode(message: _18.ResponseInitChain, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseInitChain;
+        fromJSON(object: any): _18.ResponseInitChain;
+        toJSON(message: _18.ResponseInitChain): unknown;
         fromPartial<I_18 extends {
             ResponseBase?: {
                 Error?: {
@@ -1501,7 +1501,7 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_18["ResponseBase"], keyof _7.ResponseBase>, never>;
+            } & Record<Exclude<keyof I_18["ResponseBase"], keyof _18.ResponseBase>, never>;
             ConsensusParams?: {
                 Block?: {
                     MaxTxBytes?: string | number | import("long");
@@ -1881,13 +1881,13 @@ export declare const abci: {
                         toUnsigned: () => import("long");
                         xor: (other: string | number | import("long")) => import("long");
                     } & Record<Exclude<keyof I_18["ConsensusParams"]["Block"]["TimeIotaMS"], keyof import("long")>, never>);
-                } & Record<Exclude<keyof I_18["ConsensusParams"]["Block"], keyof _7.BlockParams>, never>;
+                } & Record<Exclude<keyof I_18["ConsensusParams"]["Block"], keyof _18.BlockParams>, never>;
                 Validator?: {
                     PubKeyTypeURLs?: string[];
                 } & {
                     PubKeyTypeURLs?: string[] & string[] & Record<Exclude<keyof I_18["ConsensusParams"]["Validator"]["PubKeyTypeURLs"], keyof string[]>, never>;
                 } & Record<Exclude<keyof I_18["ConsensusParams"]["Validator"], "PubKeyTypeURLs">, never>;
-            } & Record<Exclude<keyof I_18["ConsensusParams"], keyof _7.ConsensusParams>, never>;
+            } & Record<Exclude<keyof I_18["ConsensusParams"], keyof _18.ConsensusParams>, never>;
             Validators?: {
                 Address?: string;
                 PubKey?: {
@@ -1983,7 +1983,7 @@ export declare const abci: {
                     toUnsigned: () => import("long");
                     xor: (other: string | number | import("long")) => import("long");
                 } & Record<Exclude<keyof I_18["Validators"][number]["Power"], keyof import("long")>, never>);
-            } & Record<Exclude<keyof I_18["Validators"][number], keyof _7.ValidatorUpdate>, never>)[] & Record<Exclude<keyof I_18["Validators"], keyof {
+            } & Record<Exclude<keyof I_18["Validators"][number], keyof _18.ValidatorUpdate>, never>)[] & Record<Exclude<keyof I_18["Validators"], keyof {
                 Address?: string;
                 PubKey?: {
                     typeUrl?: string;
@@ -1991,13 +1991,13 @@ export declare const abci: {
                 };
                 Power?: string | number | import("long");
             }[]>, never>;
-        } & Record<Exclude<keyof I_18, keyof _7.ResponseInitChain>, never>>(object: I_18): _7.ResponseInitChain;
+        } & Record<Exclude<keyof I_18, keyof _18.ResponseInitChain>, never>>(object: I_18): _18.ResponseInitChain;
     };
     ResponseQuery: {
-        encode(message: _7.ResponseQuery, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseQuery;
-        fromJSON(object: any): _7.ResponseQuery;
-        toJSON(message: _7.ResponseQuery): unknown;
+        encode(message: _18.ResponseQuery, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseQuery;
+        fromJSON(object: any): _18.ResponseQuery;
+        toJSON(message: _18.ResponseQuery): unknown;
         fromPartial<I_19 extends {
             ResponseBase?: {
                 Error?: {
@@ -2059,7 +2059,7 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_19["ResponseBase"], keyof _7.ResponseBase>, never>;
+            } & Record<Exclude<keyof I_19["ResponseBase"], keyof _18.ResponseBase>, never>;
             Key?: Uint8Array;
             Value?: Uint8Array;
             Proof?: {
@@ -2159,13 +2159,13 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_19["Height"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_19, keyof _7.ResponseQuery>, never>>(object: I_19): _7.ResponseQuery;
+        } & Record<Exclude<keyof I_19, keyof _18.ResponseQuery>, never>>(object: I_19): _18.ResponseQuery;
     };
     ResponseBeginBlock: {
-        encode(message: _7.ResponseBeginBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseBeginBlock;
-        fromJSON(object: any): _7.ResponseBeginBlock;
-        toJSON(message: _7.ResponseBeginBlock): unknown;
+        encode(message: _18.ResponseBeginBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseBeginBlock;
+        fromJSON(object: any): _18.ResponseBeginBlock;
+        toJSON(message: _18.ResponseBeginBlock): unknown;
         fromPartial<I_20 extends {
             ResponseBase?: {
                 Error?: {
@@ -2217,14 +2217,14 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_20["ResponseBase"], keyof _7.ResponseBase>, never>;
-        } & Record<Exclude<keyof I_20, "ResponseBase">, never>>(object: I_20): _7.ResponseBeginBlock;
+            } & Record<Exclude<keyof I_20["ResponseBase"], keyof _18.ResponseBase>, never>;
+        } & Record<Exclude<keyof I_20, "ResponseBase">, never>>(object: I_20): _18.ResponseBeginBlock;
     };
     ResponseCheckTx: {
-        encode(message: _7.ResponseCheckTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseCheckTx;
-        fromJSON(object: any): _7.ResponseCheckTx;
-        toJSON(message: _7.ResponseCheckTx): unknown;
+        encode(message: _18.ResponseCheckTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseCheckTx;
+        fromJSON(object: any): _18.ResponseCheckTx;
+        toJSON(message: _18.ResponseCheckTx): unknown;
         fromPartial<I_21 extends {
             ResponseBase?: {
                 Error?: {
@@ -2278,7 +2278,7 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_21["ResponseBase"], keyof _7.ResponseBase>, never>;
+            } & Record<Exclude<keyof I_21["ResponseBase"], keyof _18.ResponseBase>, never>;
             GasWanted?: string | number | (import("long") & {
                 high: number;
                 low: number;
@@ -2423,13 +2423,13 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_21["GasUsed"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_21, keyof _7.ResponseCheckTx>, never>>(object: I_21): _7.ResponseCheckTx;
+        } & Record<Exclude<keyof I_21, keyof _18.ResponseCheckTx>, never>>(object: I_21): _18.ResponseCheckTx;
     };
     ResponseDeliverTx: {
-        encode(message: _7.ResponseDeliverTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseDeliverTx;
-        fromJSON(object: any): _7.ResponseDeliverTx;
-        toJSON(message: _7.ResponseDeliverTx): unknown;
+        encode(message: _18.ResponseDeliverTx, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseDeliverTx;
+        fromJSON(object: any): _18.ResponseDeliverTx;
+        toJSON(message: _18.ResponseDeliverTx): unknown;
         fromPartial<I_22 extends {
             ResponseBase?: {
                 Error?: {
@@ -2483,7 +2483,7 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_22["ResponseBase"], keyof _7.ResponseBase>, never>;
+            } & Record<Exclude<keyof I_22["ResponseBase"], keyof _18.ResponseBase>, never>;
             GasWanted?: string | number | (import("long") & {
                 high: number;
                 low: number;
@@ -2628,13 +2628,13 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_22["GasUsed"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_22, keyof _7.ResponseDeliverTx>, never>>(object: I_22): _7.ResponseDeliverTx;
+        } & Record<Exclude<keyof I_22, keyof _18.ResponseDeliverTx>, never>>(object: I_22): _18.ResponseDeliverTx;
     };
     ResponseEndBlock: {
-        encode(message: _7.ResponseEndBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseEndBlock;
-        fromJSON(object: any): _7.ResponseEndBlock;
-        toJSON(message: _7.ResponseEndBlock): unknown;
+        encode(message: _18.ResponseEndBlock, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseEndBlock;
+        fromJSON(object: any): _18.ResponseEndBlock;
+        toJSON(message: _18.ResponseEndBlock): unknown;
         fromPartial<I_23 extends {
             ResponseBase?: {
                 Error?: {
@@ -2710,7 +2710,7 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_23["ResponseBase"], keyof _7.ResponseBase>, never>;
+            } & Record<Exclude<keyof I_23["ResponseBase"], keyof _18.ResponseBase>, never>;
             ValidatorUpdates?: {
                 Address?: string;
                 PubKey?: {
@@ -2806,7 +2806,7 @@ export declare const abci: {
                     toUnsigned: () => import("long");
                     xor: (other: string | number | import("long")) => import("long");
                 } & Record<Exclude<keyof I_23["ValidatorUpdates"][number]["Power"], keyof import("long")>, never>);
-            } & Record<Exclude<keyof I_23["ValidatorUpdates"][number], keyof _7.ValidatorUpdate>, never>)[] & Record<Exclude<keyof I_23["ValidatorUpdates"], keyof {
+            } & Record<Exclude<keyof I_23["ValidatorUpdates"][number], keyof _18.ValidatorUpdate>, never>)[] & Record<Exclude<keyof I_23["ValidatorUpdates"], keyof {
                 Address?: string;
                 PubKey?: {
                     typeUrl?: string;
@@ -3193,13 +3193,13 @@ export declare const abci: {
                         toUnsigned: () => import("long");
                         xor: (other: string | number | import("long")) => import("long");
                     } & Record<Exclude<keyof I_23["ConsensusParams"]["Block"]["TimeIotaMS"], keyof import("long")>, never>);
-                } & Record<Exclude<keyof I_23["ConsensusParams"]["Block"], keyof _7.BlockParams>, never>;
+                } & Record<Exclude<keyof I_23["ConsensusParams"]["Block"], keyof _18.BlockParams>, never>;
                 Validator?: {
                     PubKeyTypeURLs?: string[];
                 } & {
                     PubKeyTypeURLs?: string[] & string[] & Record<Exclude<keyof I_23["ConsensusParams"]["Validator"]["PubKeyTypeURLs"], keyof string[]>, never>;
                 } & Record<Exclude<keyof I_23["ConsensusParams"]["Validator"], "PubKeyTypeURLs">, never>;
-            } & Record<Exclude<keyof I_23["ConsensusParams"], keyof _7.ConsensusParams>, never>;
+            } & Record<Exclude<keyof I_23["ConsensusParams"], keyof _18.ConsensusParams>, never>;
             Events?: {
                 typeUrl?: string;
                 value?: Uint8Array;
@@ -3213,13 +3213,13 @@ export declare const abci: {
                 typeUrl?: string;
                 value?: Uint8Array;
             }[]>, never>;
-        } & Record<Exclude<keyof I_23, keyof _7.ResponseEndBlock>, never>>(object: I_23): _7.ResponseEndBlock;
+        } & Record<Exclude<keyof I_23, keyof _18.ResponseEndBlock>, never>>(object: I_23): _18.ResponseEndBlock;
     };
     ResponseCommit: {
-        encode(message: _7.ResponseCommit, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ResponseCommit;
-        fromJSON(object: any): _7.ResponseCommit;
-        toJSON(message: _7.ResponseCommit): unknown;
+        encode(message: _18.ResponseCommit, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ResponseCommit;
+        fromJSON(object: any): _18.ResponseCommit;
+        toJSON(message: _18.ResponseCommit): unknown;
         fromPartial<I_24 extends {
             ResponseBase?: {
                 Error?: {
@@ -3271,25 +3271,25 @@ export declare const abci: {
                 }[]>, never>;
                 Log?: string;
                 Info?: string;
-            } & Record<Exclude<keyof I_24["ResponseBase"], keyof _7.ResponseBase>, never>;
-        } & Record<Exclude<keyof I_24, "ResponseBase">, never>>(object: I_24): _7.ResponseCommit;
+            } & Record<Exclude<keyof I_24["ResponseBase"], keyof _18.ResponseBase>, never>;
+        } & Record<Exclude<keyof I_24, "ResponseBase">, never>>(object: I_24): _18.ResponseCommit;
     };
     StringError: {
-        encode(message: _7.StringError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.StringError;
-        fromJSON(object: any): _7.StringError;
-        toJSON(message: _7.StringError): unknown;
+        encode(message: _18.StringError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.StringError;
+        fromJSON(object: any): _18.StringError;
+        toJSON(message: _18.StringError): unknown;
         fromPartial<I_25 extends {
             Value?: string;
         } & {
             Value?: string;
-        } & Record<Exclude<keyof I_25, "Value">, never>>(object: I_25): _7.StringError;
+        } & Record<Exclude<keyof I_25, "Value">, never>>(object: I_25): _18.StringError;
     };
     ConsensusParams: {
-        encode(message: _7.ConsensusParams, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ConsensusParams;
-        fromJSON(object: any): _7.ConsensusParams;
-        toJSON(message: _7.ConsensusParams): unknown;
+        encode(message: _18.ConsensusParams, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ConsensusParams;
+        fromJSON(object: any): _18.ConsensusParams;
+        toJSON(message: _18.ConsensusParams): unknown;
         fromPartial<I_26 extends {
             Block?: {
                 MaxTxBytes?: string | number | import("long");
@@ -3669,19 +3669,19 @@ export declare const abci: {
                     toUnsigned: () => import("long");
                     xor: (other: string | number | import("long")) => import("long");
                 } & Record<Exclude<keyof I_26["Block"]["TimeIotaMS"], keyof import("long")>, never>);
-            } & Record<Exclude<keyof I_26["Block"], keyof _7.BlockParams>, never>;
+            } & Record<Exclude<keyof I_26["Block"], keyof _18.BlockParams>, never>;
             Validator?: {
                 PubKeyTypeURLs?: string[];
             } & {
                 PubKeyTypeURLs?: string[] & string[] & Record<Exclude<keyof I_26["Validator"]["PubKeyTypeURLs"], keyof string[]>, never>;
             } & Record<Exclude<keyof I_26["Validator"], "PubKeyTypeURLs">, never>;
-        } & Record<Exclude<keyof I_26, keyof _7.ConsensusParams>, never>>(object: I_26): _7.ConsensusParams;
+        } & Record<Exclude<keyof I_26, keyof _18.ConsensusParams>, never>>(object: I_26): _18.ConsensusParams;
     };
     BlockParams: {
-        encode(message: _7.BlockParams, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.BlockParams;
-        fromJSON(object: any): _7.BlockParams;
-        toJSON(message: _7.BlockParams): unknown;
+        encode(message: _18.BlockParams, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.BlockParams;
+        fromJSON(object: any): _18.BlockParams;
+        toJSON(message: _18.BlockParams): unknown;
         fromPartial<I_27 extends {
             MaxTxBytes?: string | number | import("long");
             MaxDataBytes?: string | number | import("long");
@@ -4049,24 +4049,24 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_27["TimeIotaMS"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_27, keyof _7.BlockParams>, never>>(object: I_27): _7.BlockParams;
+        } & Record<Exclude<keyof I_27, keyof _18.BlockParams>, never>>(object: I_27): _18.BlockParams;
     };
     ValidatorParams: {
-        encode(message: _7.ValidatorParams, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ValidatorParams;
-        fromJSON(object: any): _7.ValidatorParams;
-        toJSON(message: _7.ValidatorParams): unknown;
+        encode(message: _18.ValidatorParams, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ValidatorParams;
+        fromJSON(object: any): _18.ValidatorParams;
+        toJSON(message: _18.ValidatorParams): unknown;
         fromPartial<I_28 extends {
             PubKeyTypeURLs?: string[];
         } & {
             PubKeyTypeURLs?: string[] & string[] & Record<Exclude<keyof I_28["PubKeyTypeURLs"], keyof string[]>, never>;
-        } & Record<Exclude<keyof I_28, "PubKeyTypeURLs">, never>>(object: I_28): _7.ValidatorParams;
+        } & Record<Exclude<keyof I_28, "PubKeyTypeURLs">, never>>(object: I_28): _18.ValidatorParams;
     };
     ValidatorUpdate: {
-        encode(message: _7.ValidatorUpdate, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.ValidatorUpdate;
-        fromJSON(object: any): _7.ValidatorUpdate;
-        toJSON(message: _7.ValidatorUpdate): unknown;
+        encode(message: _18.ValidatorUpdate, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.ValidatorUpdate;
+        fromJSON(object: any): _18.ValidatorUpdate;
+        toJSON(message: _18.ValidatorUpdate): unknown;
         fromPartial<I_29 extends {
             Address?: string;
             PubKey?: {
@@ -4155,13 +4155,13 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_29["Power"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_29, keyof _7.ValidatorUpdate>, never>>(object: I_29): _7.ValidatorUpdate;
+        } & Record<Exclude<keyof I_29, keyof _18.ValidatorUpdate>, never>>(object: I_29): _18.ValidatorUpdate;
     };
     LastCommitInfo: {
-        encode(message: _7.LastCommitInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.LastCommitInfo;
-        fromJSON(object: any): _7.LastCommitInfo;
-        toJSON(message: _7.LastCommitInfo): unknown;
+        encode(message: _18.LastCommitInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.LastCommitInfo;
+        fromJSON(object: any): _18.LastCommitInfo;
+        toJSON(message: _18.LastCommitInfo): unknown;
         fromPartial<I_30 extends {
             Round?: number;
             Votes?: {
@@ -4254,18 +4254,18 @@ export declare const abci: {
                     xor: (other: string | number | import("long")) => import("long");
                 } & Record<Exclude<keyof I_30["Votes"][number]["Power"], keyof import("long")>, never>);
                 SignedLastBlock?: boolean;
-            } & Record<Exclude<keyof I_30["Votes"][number], keyof _7.VoteInfo>, never>)[] & Record<Exclude<keyof I_30["Votes"], keyof {
+            } & Record<Exclude<keyof I_30["Votes"][number], keyof _18.VoteInfo>, never>)[] & Record<Exclude<keyof I_30["Votes"], keyof {
                 Address?: string;
                 Power?: string | number | import("long");
                 SignedLastBlock?: boolean;
             }[]>, never>;
-        } & Record<Exclude<keyof I_30, keyof _7.LastCommitInfo>, never>>(object: I_30): _7.LastCommitInfo;
+        } & Record<Exclude<keyof I_30, keyof _18.LastCommitInfo>, never>>(object: I_30): _18.LastCommitInfo;
     };
     VoteInfo: {
-        encode(message: _7.VoteInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.VoteInfo;
-        fromJSON(object: any): _7.VoteInfo;
-        toJSON(message: _7.VoteInfo): unknown;
+        encode(message: _18.VoteInfo, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.VoteInfo;
+        fromJSON(object: any): _18.VoteInfo;
+        toJSON(message: _18.VoteInfo): unknown;
         fromPartial<I_31 extends {
             Address?: string;
             Power?: string | number | import("long");
@@ -4345,24 +4345,24 @@ export declare const abci: {
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_31["Power"], keyof import("long")>, never>);
             SignedLastBlock?: boolean;
-        } & Record<Exclude<keyof I_31, keyof _7.VoteInfo>, never>>(object: I_31): _7.VoteInfo;
+        } & Record<Exclude<keyof I_31, keyof _18.VoteInfo>, never>>(object: I_31): _18.VoteInfo;
     };
     EventString: {
-        encode(message: _7.EventString, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.EventString;
-        fromJSON(object: any): _7.EventString;
-        toJSON(message: _7.EventString): unknown;
+        encode(message: _18.EventString, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.EventString;
+        fromJSON(object: any): _18.EventString;
+        toJSON(message: _18.EventString): unknown;
         fromPartial<I_32 extends {
             Value?: string;
         } & {
             Value?: string;
-        } & Record<Exclude<keyof I_32, "Value">, never>>(object: I_32): _7.EventString;
+        } & Record<Exclude<keyof I_32, "Value">, never>>(object: I_32): _18.EventString;
     };
     MockHeader: {
-        encode(message: _7.MockHeader, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _7.MockHeader;
-        fromJSON(object: any): _7.MockHeader;
-        toJSON(message: _7.MockHeader): unknown;
+        encode(message: _18.MockHeader, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _18.MockHeader;
+        fromJSON(object: any): _18.MockHeader;
+        toJSON(message: _18.MockHeader): unknown;
         fromPartial<I_33 extends {
             Version?: string;
             ChainID?: string;
@@ -4590,6 +4590,6 @@ export declare const abci: {
                 toUnsigned: () => import("long");
                 xor: (other: string | number | import("long")) => import("long");
             } & Record<Exclude<keyof I_33["TotalTxs"], keyof import("long")>, never>);
-        } & Record<Exclude<keyof I_33, keyof _7.MockHeader>, never>>(object: I_33): _7.MockHeader;
+        } & Record<Exclude<keyof I_33, keyof _18.MockHeader>, never>>(object: I_33): _18.MockHeader;
     };
 };
