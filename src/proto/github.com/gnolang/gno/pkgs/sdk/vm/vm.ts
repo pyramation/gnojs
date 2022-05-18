@@ -1,17 +1,16 @@
-/* eslint-disable */
-import Long from "long";
+import { MemPackage } from "../../std/std";
 import * as _m0 from "protobufjs/minimal";
-import { MemPackage } from "../../../../../../github.com/gnolang/gno/pkgs/std/std";
+import { isSet, Exact, DeepPartial } from "@osmonauts/helpers";
 
 /** messages */
-export interface mCall {
+export interface m_call {
   Caller: string;
   Send: string;
   PkgPath: string;
   Func: string;
   Args: string[];
 }
-export interface mAddpkg {
+export interface m_addpkg {
   Creator: string;
   Package: MemPackage;
   Deposit: string;
@@ -20,7 +19,7 @@ export interface InvalidPkgPathError {}
 export interface InvalidStmtError {}
 export interface InvalidExprError {}
 
-function createBasemCall(): mCall {
+function createBaseM_call(): m_call {
   return {
     Caller: "",
     Send: "",
@@ -30,8 +29,8 @@ function createBasemCall(): mCall {
   };
 }
 
-export const mCall = {
-  encode(message: mCall, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const m_call = {
+  encode(message: m_call, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.Caller !== "") {
       writer.uint32(10).string(message.Caller);
     }
@@ -55,10 +54,10 @@ export const mCall = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): mCall {
+  decode(input: _m0.Reader | Uint8Array, length?: number): m_call {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasemCall();
+    const message = createBaseM_call();
 
     while (reader.pos < end) {
       const tag = reader.uint32();
@@ -93,7 +92,7 @@ export const mCall = {
     return message;
   },
 
-  fromJSON(object: any): mCall {
+  fromJSON(object: any): m_call {
     return {
       Caller: isSet(object.Caller) ? String(object.Caller) : "",
       Send: isSet(object.Send) ? String(object.Send) : "",
@@ -103,7 +102,7 @@ export const mCall = {
     };
   },
 
-  toJSON(message: mCall): unknown {
+  toJSON(message: m_call): unknown {
     const obj: any = {};
     message.Caller !== undefined && (obj.Caller = message.Caller);
     message.Send !== undefined && (obj.Send = message.Send);
@@ -119,8 +118,8 @@ export const mCall = {
     return obj;
   },
 
-  fromPartial<I extends Exact<DeepPartial<mCall>, I>>(object: I): mCall {
-    const message = createBasemCall();
+  fromPartial<I extends Exact<DeepPartial<m_call>, I>>(object: I): m_call {
+    const message = createBaseM_call();
     message.Caller = object.Caller ?? "";
     message.Send = object.Send ?? "";
     message.PkgPath = object.PkgPath ?? "";
@@ -131,7 +130,7 @@ export const mCall = {
 
 };
 
-function createBasemAddpkg(): mAddpkg {
+function createBaseM_addpkg(): m_addpkg {
   return {
     Creator: "",
     Package: undefined,
@@ -139,8 +138,8 @@ function createBasemAddpkg(): mAddpkg {
   };
 }
 
-export const mAddpkg = {
-  encode(message: mAddpkg, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const m_addpkg = {
+  encode(message: m_addpkg, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.Creator !== "") {
       writer.uint32(10).string(message.Creator);
     }
@@ -156,10 +155,10 @@ export const mAddpkg = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): mAddpkg {
+  decode(input: _m0.Reader | Uint8Array, length?: number): m_addpkg {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasemAddpkg();
+    const message = createBaseM_addpkg();
 
     while (reader.pos < end) {
       const tag = reader.uint32();
@@ -186,7 +185,7 @@ export const mAddpkg = {
     return message;
   },
 
-  fromJSON(object: any): mAddpkg {
+  fromJSON(object: any): m_addpkg {
     return {
       Creator: isSet(object.Creator) ? String(object.Creator) : "",
       Package: isSet(object.Package) ? MemPackage.fromJSON(object.Package) : undefined,
@@ -194,7 +193,7 @@ export const mAddpkg = {
     };
   },
 
-  toJSON(message: mAddpkg): unknown {
+  toJSON(message: m_addpkg): unknown {
     const obj: any = {};
     message.Creator !== undefined && (obj.Creator = message.Creator);
     message.Package !== undefined && (obj.Package = message.Package ? MemPackage.toJSON(message.Package) : undefined);
@@ -202,8 +201,8 @@ export const mAddpkg = {
     return obj;
   },
 
-  fromPartial<I extends Exact<DeepPartial<mAddpkg>, I>>(object: I): mAddpkg {
-    const message = createBasemAddpkg();
+  fromPartial<I extends Exact<DeepPartial<m_addpkg>, I>>(object: I): m_addpkg {
+    const message = createBaseM_addpkg();
     message.Creator = object.Creator ?? "";
     message.Package = object.Package !== undefined && object.Package !== null ? MemPackage.fromPartial(object.Package) : undefined;
     message.Deposit = object.Deposit ?? "";
@@ -340,17 +339,3 @@ export const InvalidExprError = {
   }
 
 };
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> } : Partial<T>;
-type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = (Long as any);
-
-  _m0.configure();
-}
-
-function isSet(value: any): boolean {
-  return value !== null && value !== undefined;
-}

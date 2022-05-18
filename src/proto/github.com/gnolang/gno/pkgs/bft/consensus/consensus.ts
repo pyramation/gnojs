@@ -1,11 +1,10 @@
-/* eslint-disable */
-import Long from "long";
-import * as _m0 from "protobufjs/minimal";
-import { PartSetHeader, Proposal, Part, Vote, BlockID } from "../../../../../../github.com/gnolang/gno/pkgs/bft/types/types";
-import { BitArray } from "../../../../../../github.com/gnolang/gno/pkgs/bitarray/bitarray";
-import { HRS } from "../../../../../../github.com/gnolang/gno/pkgs/bft/consensus/types/types";
+import { PartSetHeader, Proposal, Part, Vote, BlockID } from "../types/types";
+import { BitArray } from "../../bitarray/bitarray";
+import { HRS } from "./types/cstypes";
 import { Any } from "../../../../../../google/protobuf/any";
 import { Duration } from "../../../../../../google/protobuf/duration";
+import * as _m0 from "protobufjs/minimal";
+import { Long, isSet, Exact, DeepPartial } from "@osmonauts/helpers";
 
 /** messages */
 export interface NewRoundStepMessage {
@@ -65,7 +64,7 @@ export interface msgInfo {
   PeerID: string;
 }
 export interface timeoutInfo {
-  Duration: Duration;
+  Duration: string;
   Height: Long;
   Round: Long;
   Step: number;
@@ -848,7 +847,7 @@ export const VoteSetBitsMessage = {
 
 };
 
-function createBasenewRoundStepInfo(): newRoundStepInfo {
+function createBaseNewRoundStepInfo(): newRoundStepInfo {
   return {
     HRS: undefined
   };
@@ -866,7 +865,7 @@ export const newRoundStepInfo = {
   decode(input: _m0.Reader | Uint8Array, length?: number): newRoundStepInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasenewRoundStepInfo();
+    const message = createBaseNewRoundStepInfo();
 
     while (reader.pos < end) {
       const tag = reader.uint32();
@@ -898,14 +897,14 @@ export const newRoundStepInfo = {
   },
 
   fromPartial<I extends Exact<DeepPartial<newRoundStepInfo>, I>>(object: I): newRoundStepInfo {
-    const message = createBasenewRoundStepInfo();
+    const message = createBaseNewRoundStepInfo();
     message.HRS = object.HRS !== undefined && object.HRS !== null ? HRS.fromPartial(object.HRS) : undefined;
     return message;
   }
 
 };
 
-function createBasemsgInfo(): msgInfo {
+function createBaseMsgInfo(): msgInfo {
   return {
     Msg: undefined,
     PeerID: ""
@@ -928,7 +927,7 @@ export const msgInfo = {
   decode(input: _m0.Reader | Uint8Array, length?: number): msgInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasemsgInfo();
+    const message = createBaseMsgInfo();
 
     while (reader.pos < end) {
       const tag = reader.uint32();
@@ -966,7 +965,7 @@ export const msgInfo = {
   },
 
   fromPartial<I extends Exact<DeepPartial<msgInfo>, I>>(object: I): msgInfo {
-    const message = createBasemsgInfo();
+    const message = createBaseMsgInfo();
     message.Msg = object.Msg !== undefined && object.Msg !== null ? Any.fromPartial(object.Msg) : undefined;
     message.PeerID = object.PeerID ?? "";
     return message;
@@ -974,7 +973,7 @@ export const msgInfo = {
 
 };
 
-function createBasetimeoutInfo(): timeoutInfo {
+function createBaseTimeoutInfo(): timeoutInfo {
   return {
     Duration: undefined,
     Height: Long.ZERO,
@@ -1007,7 +1006,7 @@ export const timeoutInfo = {
   decode(input: _m0.Reader | Uint8Array, length?: number): timeoutInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasetimeoutInfo();
+    const message = createBaseTimeoutInfo();
 
     while (reader.pos < end) {
       const tag = reader.uint32();
@@ -1040,7 +1039,7 @@ export const timeoutInfo = {
 
   fromJSON(object: any): timeoutInfo {
     return {
-      Duration: isSet(object.Duration) ? Duration.fromJSON(object.Duration) : undefined,
+      Duration: isSet(object.Duration) ? String(object.Duration) : undefined,
       Height: isSet(object.Height) ? Long.fromString(object.Height) : Long.ZERO,
       Round: isSet(object.Round) ? Long.fromString(object.Round) : Long.ZERO,
       Step: isSet(object.Step) ? Number(object.Step) : 0
@@ -1049,7 +1048,7 @@ export const timeoutInfo = {
 
   toJSON(message: timeoutInfo): unknown {
     const obj: any = {};
-    message.Duration !== undefined && (obj.Duration = message.Duration ? Duration.toJSON(message.Duration) : undefined);
+    message.Duration !== undefined && (obj.Duration = message.Duration);
     message.Height !== undefined && (obj.Height = (message.Height || Long.ZERO).toString());
     message.Round !== undefined && (obj.Round = (message.Round || Long.ZERO).toString());
     message.Step !== undefined && (obj.Step = Math.round(message.Step));
@@ -1057,8 +1056,8 @@ export const timeoutInfo = {
   },
 
   fromPartial<I extends Exact<DeepPartial<timeoutInfo>, I>>(object: I): timeoutInfo {
-    const message = createBasetimeoutInfo();
-    message.Duration = object.Duration !== undefined && object.Duration !== null ? Duration.fromPartial(object.Duration) : undefined;
+    const message = createBaseTimeoutInfo();
+    message.Duration = object.Duration ?? undefined;
     message.Height = object.Height !== undefined && object.Height !== null ? Long.fromValue(object.Height) : Long.ZERO;
     message.Round = object.Round !== undefined && object.Round !== null ? Long.fromValue(object.Round) : Long.ZERO;
     message.Step = object.Step ?? 0;
@@ -1066,17 +1065,3 @@ export const timeoutInfo = {
   }
 
 };
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> } : Partial<T>;
-type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = (Long as any);
-
-  _m0.configure();
-}
-
-function isSet(value: any): boolean {
-  return value !== null && value !== undefined;
-}

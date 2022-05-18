@@ -1,10 +1,9 @@
-/* eslint-disable */
-import Long from "long";
-import * as _m0 from "protobufjs/minimal";
-import { SimpleProof } from "../../../../../../github.com/gnolang/gno/pkgs/crypto/merkle/merkle";
-import { Any } from "../../../../../../google/protobuf/any";
-import { ResponseBeginBlock, ResponseEndBlock, ResponseDeliverTx, ValidatorUpdate } from "../../../../../../github.com/gnolang/gno/pkgs/bft/abci/types/abci";
 import { Timestamp } from "../../../../../../google/protobuf/timestamp";
+import { SimpleProof } from "../../crypto/merkle/merkle";
+import { Any } from "../../../../../../google/protobuf/any";
+import { ResponseBeginBlock, ResponseEndBlock, ValidatorUpdate, ResponseDeliverTx } from "../abci/types/abci";
+import * as _m0 from "protobufjs/minimal";
+import { toTimestamp, Long, fromTimestamp, isSet, fromJsonTimestamp, bytesFromBase64, base64FromBytes, Exact, DeepPartial } from "@osmonauts/helpers";
 
 /** messages */
 export interface Proposal {
@@ -137,7 +136,7 @@ export interface MockAppState {
   AccountOwner: string;
 }
 export interface VoteSet {}
-export interface typesBytesList {
+export interface TYPES_BytesList {
   Value: Uint8Array[];
 }
 
@@ -2291,14 +2290,14 @@ export const VoteSet = {
 
 };
 
-function createBasetypesBytesList(): typesBytesList {
+function createBaseTYPES_BytesList(): TYPES_BytesList {
   return {
     Value: []
   };
 }
 
-export const typesBytesList = {
-  encode(message: typesBytesList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const TYPES_BytesList = {
+  encode(message: TYPES_BytesList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     for (const v of message.Value) {
       writer.uint32(10).bytes(v!);
     }
@@ -2306,10 +2305,10 @@ export const typesBytesList = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): typesBytesList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): TYPES_BytesList {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasetypesBytesList();
+    const message = createBaseTYPES_BytesList();
 
     while (reader.pos < end) {
       const tag = reader.uint32();
@@ -2328,13 +2327,13 @@ export const typesBytesList = {
     return message;
   },
 
-  fromJSON(object: any): typesBytesList {
+  fromJSON(object: any): TYPES_BytesList {
     return {
       Value: Array.isArray(object?.Value) ? object.Value.map((e: any) => bytesFromBase64(e)) : []
     };
   },
 
-  toJSON(message: typesBytesList): unknown {
+  toJSON(message: TYPES_BytesList): unknown {
     const obj: any = {};
 
     if (message.Value) {
@@ -2346,88 +2345,10 @@ export const typesBytesList = {
     return obj;
   },
 
-  fromPartial<I extends Exact<DeepPartial<typesBytesList>, I>>(object: I): typesBytesList {
-    const message = createBasetypesBytesList();
+  fromPartial<I extends Exact<DeepPartial<TYPES_BytesList>, I>>(object: I): TYPES_BytesList {
+    const message = createBaseTYPES_BytesList();
     message.Value = object.Value?.map(e => e) || [];
     return message;
   }
 
 };
-declare var self: any | undefined;
-declare var window: any | undefined;
-declare var global: any | undefined;
-
-var globalThis: any = (() => {
-  if (typeof globalThis !== "undefined") return globalThis;
-  if (typeof self !== "undefined") return self;
-  if (typeof window !== "undefined") return window;
-  if (typeof global !== "undefined") return global;
-  throw "Unable to locate global object";
-})();
-
-const atob: (b64: string) => string = globalThis.atob || (b64 => globalThis.Buffer.from(b64, "base64").toString("binary"));
-
-function bytesFromBase64(b64: string): Uint8Array {
-  const bin = atob(b64);
-  const arr = new Uint8Array(bin.length);
-
-  for (let i = 0; i < bin.length; ++i) {
-    arr[i] = bin.charCodeAt(i);
-  }
-
-  return arr;
-}
-
-const btoa: (bin: string) => string = globalThis.btoa || (bin => globalThis.Buffer.from(bin, "binary").toString("base64"));
-
-function base64FromBytes(arr: Uint8Array): string {
-  const bin: string[] = [];
-  arr.forEach(byte => {
-    bin.push(String.fromCharCode(byte));
-  });
-  return btoa(bin.join(""));
-}
-
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> } : Partial<T>;
-type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
-
-function toTimestamp(date: Date): Timestamp {
-  const seconds = numberToLong(date.getTime() / 1_000);
-  const nanos = date.getTime() % 1_000 * 1_000_000;
-  return {
-    seconds,
-    nanos
-  };
-}
-
-function fromTimestamp(t: Timestamp): Date {
-  let millis = t.seconds.toNumber() * 1_000;
-  millis += t.nanos / 1_000_000;
-  return new Date(millis);
-}
-
-function fromJsonTimestamp(o: any): Date {
-  if (o instanceof Date) {
-    return o;
-  } else if (typeof o === "string") {
-    return new Date(o);
-  } else {
-    return fromTimestamp(Timestamp.fromJSON(o));
-  }
-}
-
-function numberToLong(number: number) {
-  return Long.fromNumber(number);
-}
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = (Long as any);
-
-  _m0.configure();
-}
-
-function isSet(value: any): boolean {
-  return value !== null && value !== undefined;
-}

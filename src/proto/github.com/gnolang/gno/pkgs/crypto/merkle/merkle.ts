@@ -1,6 +1,5 @@
-/* eslint-disable */
-import Long from "long";
 import * as _m0 from "protobufjs/minimal";
+import { isSet, bytesFromBase64, base64FromBytes, Exact, DeepPartial, Long } from "@osmonauts/helpers";
 
 /** messages */
 export interface ProofOp {
@@ -23,7 +22,7 @@ export interface SimpleProofNode {
   Left: SimpleProofNode;
   Right: SimpleProofNode;
 }
-export interface merkleBytesList {
+export interface MERKLE_BytesList {
   Value: Uint8Array[];
 }
 
@@ -363,14 +362,14 @@ export const SimpleProofNode = {
 
 };
 
-function createBasemerkleBytesList(): merkleBytesList {
+function createBaseMERKLE_BytesList(): MERKLE_BytesList {
   return {
     Value: []
   };
 }
 
-export const merkleBytesList = {
-  encode(message: merkleBytesList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+export const MERKLE_BytesList = {
+  encode(message: MERKLE_BytesList, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     for (const v of message.Value) {
       writer.uint32(10).bytes(v!);
     }
@@ -378,10 +377,10 @@ export const merkleBytesList = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): merkleBytesList {
+  decode(input: _m0.Reader | Uint8Array, length?: number): MERKLE_BytesList {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasemerkleBytesList();
+    const message = createBaseMERKLE_BytesList();
 
     while (reader.pos < end) {
       const tag = reader.uint32();
@@ -400,13 +399,13 @@ export const merkleBytesList = {
     return message;
   },
 
-  fromJSON(object: any): merkleBytesList {
+  fromJSON(object: any): MERKLE_BytesList {
     return {
       Value: Array.isArray(object?.Value) ? object.Value.map((e: any) => bytesFromBase64(e)) : []
     };
   },
 
-  toJSON(message: merkleBytesList): unknown {
+  toJSON(message: MERKLE_BytesList): unknown {
     const obj: any = {};
 
     if (message.Value) {
@@ -418,59 +417,10 @@ export const merkleBytesList = {
     return obj;
   },
 
-  fromPartial<I extends Exact<DeepPartial<merkleBytesList>, I>>(object: I): merkleBytesList {
-    const message = createBasemerkleBytesList();
+  fromPartial<I extends Exact<DeepPartial<MERKLE_BytesList>, I>>(object: I): MERKLE_BytesList {
+    const message = createBaseMERKLE_BytesList();
     message.Value = object.Value?.map(e => e) || [];
     return message;
   }
 
 };
-declare var self: any | undefined;
-declare var window: any | undefined;
-declare var global: any | undefined;
-
-var globalThis: any = (() => {
-  if (typeof globalThis !== "undefined") return globalThis;
-  if (typeof self !== "undefined") return self;
-  if (typeof window !== "undefined") return window;
-  if (typeof global !== "undefined") return global;
-  throw "Unable to locate global object";
-})();
-
-const atob: (b64: string) => string = globalThis.atob || (b64 => globalThis.Buffer.from(b64, "base64").toString("binary"));
-
-function bytesFromBase64(b64: string): Uint8Array {
-  const bin = atob(b64);
-  const arr = new Uint8Array(bin.length);
-
-  for (let i = 0; i < bin.length; ++i) {
-    arr[i] = bin.charCodeAt(i);
-  }
-
-  return arr;
-}
-
-const btoa: (bin: string) => string = globalThis.btoa || (bin => globalThis.Buffer.from(bin, "binary").toString("base64"));
-
-function base64FromBytes(arr: Uint8Array): string {
-  const bin: string[] = [];
-  arr.forEach(byte => {
-    bin.push(String.fromCharCode(byte));
-  });
-  return btoa(bin.join(""));
-}
-
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> } : Partial<T>;
-type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P : P & { [K in keyof P]: Exact<P[K], I[K]> } & Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = (Long as any);
-
-  _m0.configure();
-}
-
-function isSet(value: any): boolean {
-  return value !== null && value !== undefined;
-}

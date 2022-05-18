@@ -1,5 +1,5 @@
-import Long from "long";
 import * as _m0 from "protobufjs/minimal";
+import { Long } from "@osmonauts/helpers";
 /**
  * A Duration represents a signed, fixed-length span of time represented
  * as a count of seconds and fractions of seconds at nanosecond
@@ -12,43 +12,43 @@ import * as _m0 from "protobufjs/minimal";
  *
  * Example 1: Compute Duration from two Timestamps in pseudo code.
  *
- *     Timestamp start = ...;
- *     Timestamp end = ...;
- *     Duration duration = ...;
+ * Timestamp start = ...;
+ * Timestamp end = ...;
+ * Duration duration = ...;
  *
- *     duration.seconds = end.seconds - start.seconds;
- *     duration.nanos = end.nanos - start.nanos;
+ * duration.seconds = end.seconds - start.seconds;
+ * duration.nanos = end.nanos - start.nanos;
  *
- *     if (duration.seconds < 0 && duration.nanos > 0) {
- *       duration.seconds += 1;
- *       duration.nanos -= 1000000000;
- *     } else if (duration.seconds > 0 && duration.nanos < 0) {
- *       duration.seconds -= 1;
- *       duration.nanos += 1000000000;
- *     }
+ * if (duration.seconds < 0 && duration.nanos > 0) {
+ * duration.seconds += 1;
+ * duration.nanos -= 1000000000;
+ * } else if (durations.seconds > 0 && duration.nanos < 0) {
+ * duration.seconds -= 1;
+ * duration.nanos += 1000000000;
+ * }
  *
  * Example 2: Compute Timestamp from Timestamp + Duration in pseudo code.
  *
- *     Timestamp start = ...;
- *     Duration duration = ...;
- *     Timestamp end = ...;
+ * Timestamp start = ...;
+ * Duration duration = ...;
+ * Timestamp end = ...;
  *
- *     end.seconds = start.seconds + duration.seconds;
- *     end.nanos = start.nanos + duration.nanos;
+ * end.seconds = start.seconds + duration.seconds;
+ * end.nanos = start.nanos + duration.nanos;
  *
- *     if (end.nanos < 0) {
- *       end.seconds -= 1;
- *       end.nanos += 1000000000;
- *     } else if (end.nanos >= 1000000000) {
- *       end.seconds += 1;
- *       end.nanos -= 1000000000;
- *     }
+ * if (end.nanos < 0) {
+ * end.seconds -= 1;
+ * end.nanos += 1000000000;
+ * } else if (end.nanos >= 1000000000) {
+ * end.seconds += 1;
+ * end.nanos -= 1000000000;
+ * }
  *
  * Example 3: Compute Duration from datetime.timedelta in Python.
  *
- *     td = datetime.timedelta(days=3, minutes=10)
- *     duration = Duration()
- *     duration.FromTimedelta(td)
+ * td = datetime.timedelta(days=3, minutes=10)
+ * duration = Duration()
+ * duration.FromTimedelta(td)
  *
  * # JSON Mapping
  *
@@ -82,91 +82,5 @@ export declare const Duration: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Duration;
     fromJSON(object: any): Duration;
     toJSON(message: Duration): unknown;
-    fromPartial<I extends {
-        seconds?: string | number | Long;
-        nanos?: number;
-    } & {
-        seconds?: string | number | (Long & {
-            high: number;
-            low: number;
-            unsigned: boolean;
-            add: (addend: string | number | Long) => Long;
-            and: (other: string | number | Long) => Long;
-            compare: (other: string | number | Long) => number;
-            comp: (other: string | number | Long) => number;
-            divide: (divisor: string | number | Long) => Long;
-            div: (divisor: string | number | Long) => Long;
-            equals: (other: string | number | Long) => boolean;
-            eq: (other: string | number | Long) => boolean;
-            getHighBits: () => number;
-            getHighBitsUnsigned: () => number;
-            getLowBits: () => number;
-            getLowBitsUnsigned: () => number;
-            getNumBitsAbs: () => number;
-            greaterThan: (other: string | number | Long) => boolean;
-            gt: (other: string | number | Long) => boolean;
-            greaterThanOrEqual: (other: string | number | Long) => boolean;
-            gte: (other: string | number | Long) => boolean;
-            ge: (other: string | number | Long) => boolean;
-            isEven: () => boolean;
-            isNegative: () => boolean;
-            isOdd: () => boolean;
-            isPositive: () => boolean;
-            isZero: () => boolean;
-            eqz: () => boolean;
-            lessThan: (other: string | number | Long) => boolean;
-            lt: (other: string | number | Long) => boolean;
-            lessThanOrEqual: (other: string | number | Long) => boolean;
-            lte: (other: string | number | Long) => boolean;
-            le: (other: string | number | Long) => boolean;
-            modulo: (other: string | number | Long) => Long;
-            mod: (other: string | number | Long) => Long;
-            rem: (other: string | number | Long) => Long;
-            multiply: (multiplier: string | number | Long) => Long;
-            mul: (multiplier: string | number | Long) => Long;
-            negate: () => Long;
-            neg: () => Long;
-            not: () => Long;
-            countLeadingZeros: () => number;
-            clz: () => number;
-            countTrailingZeros: () => number;
-            ctz: () => number;
-            notEquals: (other: string | number | Long) => boolean;
-            neq: (other: string | number | Long) => boolean;
-            ne: (other: string | number | Long) => boolean;
-            or: (other: string | number | Long) => Long;
-            shiftLeft: (numBits: number | Long) => Long;
-            shl: (numBits: number | Long) => Long;
-            shiftRight: (numBits: number | Long) => Long;
-            shr: (numBits: number | Long) => Long;
-            shiftRightUnsigned: (numBits: number | Long) => Long;
-            shru: (numBits: number | Long) => Long;
-            shr_u: (numBits: number | Long) => Long;
-            rotateLeft: (numBits: number | Long) => Long;
-            rotl: (numBits: number | Long) => Long;
-            rotateRight: (numBits: number | Long) => Long;
-            rotr: (numBits: number | Long) => Long;
-            subtract: (subtrahend: string | number | Long) => Long;
-            sub: (subtrahend: string | number | Long) => Long;
-            toInt: () => number;
-            toNumber: () => number;
-            toBytes: (le?: boolean) => number[];
-            toBytesLE: () => number[];
-            toBytesBE: () => number[];
-            toSigned: () => Long;
-            toString: (radix?: number) => string;
-            toUnsigned: () => Long;
-            xor: (other: string | number | Long) => Long;
-        } & Record<Exclude<keyof I["seconds"], keyof Long>, never>);
-        nanos?: number;
-    } & Record<Exclude<keyof I, keyof Duration>, never>>(object: I): Duration;
+    fromPartial<I extends Exact<DeepPartial<Duration>, I>>(object: I): Duration;
 };
-declare type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export declare type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
-    [K in keyof T]?: DeepPartial<T[K]>;
-} : Partial<T>;
-declare type KeysOfUnion<T> = T extends T ? keyof T : never;
-export declare type Exact<P, I extends P> = P extends Builtin ? P : P & {
-    [K in keyof P]: Exact<P[K], I[K]>;
-} & Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
-export {};

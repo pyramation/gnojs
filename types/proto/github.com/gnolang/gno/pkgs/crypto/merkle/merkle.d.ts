@@ -1,5 +1,5 @@
-import Long from "long";
 import * as _m0 from "protobufjs/minimal";
+import { Long } from "@osmonauts/helpers";
 /** messages */
 export interface ProofOp {
     Type: string;
@@ -9,58 +9,53 @@ export interface ProofOp {
 export interface Proof {
     Ops: ProofOp[];
 }
+export interface SimpleProof {
+    Total: Long;
+    Index: Long;
+    LeafHash: Uint8Array;
+    Aunts: Uint8Array[];
+}
+export interface SimpleProofNode {
+    Hash: Uint8Array;
+    Parent: SimpleProofNode;
+    Left: SimpleProofNode;
+    Right: SimpleProofNode;
+}
+export interface MERKLE_BytesList {
+    Value: Uint8Array[];
+}
 export declare const ProofOp: {
     encode(message: ProofOp, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): ProofOp;
     fromJSON(object: any): ProofOp;
     toJSON(message: ProofOp): unknown;
-    fromPartial<I extends {
-        Type?: string;
-        Key?: Uint8Array;
-        Data?: Uint8Array;
-    } & {
-        Type?: string;
-        Key?: Uint8Array;
-        Data?: Uint8Array;
-    } & Record<Exclude<keyof I, keyof ProofOp>, never>>(object: I): ProofOp;
+    fromPartial<I extends Exact<DeepPartial<ProofOp>, I>>(object: I): ProofOp;
 };
 export declare const Proof: {
     encode(message: Proof, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Proof;
     fromJSON(object: any): Proof;
     toJSON(message: Proof): unknown;
-    fromPartial<I extends {
-        Ops?: {
-            Type?: string;
-            Key?: Uint8Array;
-            Data?: Uint8Array;
-        }[];
-    } & {
-        Ops?: {
-            Type?: string;
-            Key?: Uint8Array;
-            Data?: Uint8Array;
-        }[] & ({
-            Type?: string;
-            Key?: Uint8Array;
-            Data?: Uint8Array;
-        } & {
-            Type?: string;
-            Key?: Uint8Array;
-            Data?: Uint8Array;
-        } & Record<Exclude<keyof I["Ops"][number], keyof ProofOp>, never>)[] & Record<Exclude<keyof I["Ops"], keyof {
-            Type?: string;
-            Key?: Uint8Array;
-            Data?: Uint8Array;
-        }[]>, never>;
-    } & Record<Exclude<keyof I, "Ops">, never>>(object: I): Proof;
+    fromPartial<I extends Exact<DeepPartial<Proof>, I>>(object: I): Proof;
 };
-declare type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export declare type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
-    [K in keyof T]?: DeepPartial<T[K]>;
-} : Partial<T>;
-declare type KeysOfUnion<T> = T extends T ? keyof T : never;
-export declare type Exact<P, I extends P> = P extends Builtin ? P : P & {
-    [K in keyof P]: Exact<P[K], I[K]>;
-} & Record<Exclude<keyof I, KeysOfUnion<P>>, never>;
-export {};
+export declare const SimpleProof: {
+    encode(message: SimpleProof, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): SimpleProof;
+    fromJSON(object: any): SimpleProof;
+    toJSON(message: SimpleProof): unknown;
+    fromPartial<I extends Exact<DeepPartial<SimpleProof>, I>>(object: I): SimpleProof;
+};
+export declare const SimpleProofNode: {
+    encode(message: SimpleProofNode, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): SimpleProofNode;
+    fromJSON(object: any): SimpleProofNode;
+    toJSON(message: SimpleProofNode): unknown;
+    fromPartial<I extends Exact<DeepPartial<SimpleProofNode>, I>>(object: I): SimpleProofNode;
+};
+export declare const MERKLE_BytesList: {
+    encode(message: MERKLE_BytesList, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): MERKLE_BytesList;
+    fromJSON(object: any): MERKLE_BytesList;
+    toJSON(message: MERKLE_BytesList): unknown;
+    fromPartial<I extends Exact<DeepPartial<MERKLE_BytesList>, I>>(object: I): MERKLE_BytesList;
+};

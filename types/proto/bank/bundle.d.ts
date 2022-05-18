@@ -1,39 +1,31 @@
-import * as _30 from "../github.com/gnolang/gno/pkgs/sdk/bank/bank";
+import * as _12 from "../github.com/gnolang/gno/pkgs/sdk/bank/bank";
 export declare const bank: {
     NoInputsError: {
-        encode(_: _30.NoInputsError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _30.NoInputsError;
-        fromJSON(_: any): _30.NoInputsError;
-        toJSON(_: _30.NoInputsError): unknown;
-        fromPartial<I extends {} & {} & Record<Exclude<keyof I, never>, never>>(_: I): _30.NoInputsError;
+        encode(_: _12.NoInputsError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _12.NoInputsError;
+        fromJSON(_: any): _12.NoInputsError;
+        toJSON(_: _12.NoInputsError): unknown;
+        fromPartial<I extends Exact<DeepPartial<_12.NoInputsError>, I>>(_: I): _12.NoInputsError;
     };
     NoOutputsError: {
-        encode(_: _30.NoOutputsError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _30.NoOutputsError;
-        fromJSON(_: any): _30.NoOutputsError;
-        toJSON(_: _30.NoOutputsError): unknown;
-        fromPartial<I_1 extends {} & {} & Record<Exclude<keyof I_1, never>, never>>(_: I_1): _30.NoOutputsError;
+        encode(_: _12.NoOutputsError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _12.NoOutputsError;
+        fromJSON(_: any): _12.NoOutputsError;
+        toJSON(_: _12.NoOutputsError): unknown;
+        fromPartial<I_1 extends Exact<DeepPartial<_12.NoOutputsError>, I_1>>(_: I_1): _12.NoOutputsError;
     };
     InputOutputMismatchError: {
-        encode(_: _30.InputOutputMismatchError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _30.InputOutputMismatchError;
-        fromJSON(_: any): _30.InputOutputMismatchError;
-        toJSON(_: _30.InputOutputMismatchError): unknown;
-        fromPartial<I_2 extends {} & {} & Record<Exclude<keyof I_2, never>, never>>(_: I_2): _30.InputOutputMismatchError;
+        encode(_: _12.InputOutputMismatchError, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _12.InputOutputMismatchError;
+        fromJSON(_: any): _12.InputOutputMismatchError;
+        toJSON(_: _12.InputOutputMismatchError): unknown;
+        fromPartial<I_2 extends Exact<DeepPartial<_12.InputOutputMismatchError>, I_2>>(_: I_2): _12.InputOutputMismatchError;
     };
     MsgSend: {
-        encode(message: _30.MsgSend, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
-        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _30.MsgSend;
-        fromJSON(object: any): _30.MsgSend;
-        toJSON(message: _30.MsgSend): unknown;
-        fromPartial<I_3 extends {
-            FromAddress?: string;
-            ToAddress?: string;
-            Amount?: string;
-        } & {
-            FromAddress?: string;
-            ToAddress?: string;
-            Amount?: string;
-        } & Record<Exclude<keyof I_3, keyof _30.MsgSend>, never>>(object: I_3): _30.MsgSend;
+        encode(message: _12.MsgSend, writer?: import("protobufjs").Writer): import("protobufjs").Writer;
+        decode(input: Uint8Array | import("protobufjs").Reader, length?: number): _12.MsgSend;
+        fromJSON(object: any): _12.MsgSend;
+        toJSON(message: _12.MsgSend): unknown;
+        fromPartial<I_3 extends Exact<DeepPartial<_12.MsgSend>, I_3>>(object: I_3): _12.MsgSend;
     };
 };

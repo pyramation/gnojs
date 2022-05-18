@@ -26,7 +26,6 @@ code /path/to/gnojs/proto
 Then run build and generate:
 
 ```sh
-yarn proto:build
 yarn proto:gen
 ```
 
