@@ -1,6 +1,6 @@
 {
   "name": "gnojs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "typescript gnoland protobufs",
   "author": "Dan Lynch <pyramation@gmail.com>",
   "homepage": "https://github.com/pyramation/gnojs#readme",
